@@ -23,7 +23,7 @@ public class CarEntity {
 
     private String model;
     private String brand;
-    private String price;
+    private Double price;
     private String description;
 
     @Column(name = "engine_version")
@@ -39,4 +39,8 @@ public class CarEntity {
     @ManyToOne
     @JoinColumn(name = "owner_id", nullable = false, referencedColumnName = "id")
     private OwnerEntity owner;
+
+    public String getOwnerName() {
+        return owner.getName();
+    }
 }
