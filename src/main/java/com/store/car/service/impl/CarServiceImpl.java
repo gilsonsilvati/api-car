@@ -66,7 +66,7 @@ public class CarServiceImpl implements CarService {
             carEntity.setOwner(ownerEntity);
             carEntity.setContact(ownerEntity.getContactNumber());
         }, ()-> {
-            throw new RuntimeException();
+            throw new NoSuchElementException();
         });
 
         carEntity.setModel(carDTO.getModel());
@@ -79,7 +79,6 @@ public class CarServiceImpl implements CarService {
 
         return carEntity;
     }
-
 
     private CarDTO mapCarEntityToDTO(CarEntity entity) {
 
